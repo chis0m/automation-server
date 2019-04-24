@@ -23,7 +23,7 @@ router.get('/stop',function(req, res){
     ShareContentController.shareStop(req, res);
 });
 
-router.get('/play',function(req, res){
+router.post('/play',function(req, res){
     ShareContentController.sharePlay(req, res);
 });
 

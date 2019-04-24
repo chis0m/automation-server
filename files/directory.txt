@@ -1,0 +1,49 @@
+Welcome to Polycom
+Password: 
+����
+Hi, my name is :     EPE-INT-F0AD-NLNG-NG
+Here is what I know about myself:
+Model:               RealPresence Group 500
+Serial Number:       8G1842498C95CV
+Software Version:    6.1.5
+Build Information:   360613
+Contact Number:      +2348039074493;ext=4493
+Time In Last Call:   00:00:11
+Total Time In Calls: 365 Days, 05:28:27
+Total Calls:         233
+SNTP Time Service:   Manual 155.236.224.210
+Local Time is:        Fri, 19 Apr 2019 14:22:06 +0100
+IP Video Number:     10.6.134.52
+MP Enabled:          K866-DE5A-E590-0000-0004
+H323 Enabled:        True
+HTTP Enabled:        True
+SNMP Enabled:        False
+globaldir 0. Abe, Olujimisayo (CMM/1) NLNGABJ:ldap#g#cf5cb7933f3df144a37847db239f1cda:site
+globaldir 1. Adeosun, Olufemi (HSE/25SS) NLNGBNY:ldap#g#dc13e37c08f21849acc5c5136f318881:site
+globaldir 2. Adeyemi, Olufemi (PPP/31) NLNGBNY:ldap#g#f687053baa19b5459a1956ae73d0697a:site
+globaldir 3. Afolabi, Olufemi (PPD/1C3) NLNGBNY:ldap#g#9e73b16625846744ba777b427d45b902:site
+globaldir 4. Afolayan, Olufemi (HSE/23) NLNGBNY:ldap#g#57777390bf6691429a184f7c4a284e5b:site
+globaldir 5. Ajeigbe, Olugbenga (PMS/224C10) NLNGBNY:ldap#g#033c86c346d3cb44acf012df96d733b2:site
+globaldir 6. Akinyele, Olubankole (ECO/41) NLNGPHC:ldap#g#1e7585f2ef8e5d42a3094f25f5f60d30:site
+globaldir 7. Atoki, Oludare (FNS/11) NLNGPHC:ldap#g#917292605747b147a5b7a9c594f86207:site
+globaldir 8. Ehinmitan, Olubunmi (PEQ/123C) NLNGBNY:ldap#g#314efdf750c9c545b6215bc8be71309c:site
+globaldir 9. Fadipe, Olugbenga (PPC/12C1) NLNGBNY:ldap#g#c8c82cdde837e442ba60d94d817db6f7:site
+globaldir 10. Isinkaye, Olubukola (IMT/61) NLNGPHC:ldap#g#ff61e7c8c2675c4f8500cdba74eba415:site
+globaldir 11. Ladipo, Olukayode (IMT/21) NLNGBNY:ldap#g#59fc75d0f5d7a347be402e13a0b36178:site
+globaldir 12. Lanre Olugbade:ldap#g#83d91ef617fd484c83a55ba4dad85fa1:site
+globaldir 13. Morgan, Olubunmi (SPM/CMGT1) NLNGPHC:ldap#g#c1ed0ba54137a742bda8926c10ea56be:site
+globaldir 14. Odegbami, Olubusola (CMO/42) NLNGBNY:ldap#g#9419617cb2b96c449463635b1fae63b6:site
+globaldir 15. Okoli, Oluchukwu (POD/118) NLNGBNY:ldap#g#650f4890e4a21840bf01faff702b9979:site
+globaldir 16. Oloworaran, Olubunmi (PPP/2) NLNGBNY:ldap#g#9cfc15731ea8c84ab2adf041b66abf73:site
+globaldir 17. Oluwaniyi, Olugbenga (FN) NLNGPHC:ldap#g#aabab402371217439e150766b04690ba:site
+globaldir 18. Omosebi, Olufemi (NST/CC) NSMLBNY:ldap#g#f68420f89fd750499b08d22da3a426da:site
+globaldir 19. Omoyeni, Olubunmi (HSE/412C) NLNGPHC:ldap#g#7231d397cd63a94f9a4a0c0b378d89fe:site
+globaldir 20. Orekogbe, Olufemi (PEC) NLNGBNY:ldap#g#7b9f28facc0c4741942594aba2115e93:site
+globaldir 21. Oyebade, Olufemi (NSH/11) NSMLPHC:ldap#g#5bbb4b3f38c4ac4bae8ba0267231e24e:site
+globaldir 22. Oyegbami, Oludare (PEE/31GT) NLNGBNY:ldap#g#8a82c4335f475e44a7be22ca58c34469:site
+globaldir 23. Shittu, Olufemi (NSML/CREW) NSMLPHC:ldap#g#3ceb43b17478544a9765e50e945a5ae0:site
+globaldir 24. Shoyebi, Olujide (PMA/121T) NLNGBNY:ldap#g#2e81b58e64ef2844b6d7f2cafac2003e:site
+globaldir 25. Sobo, Olufemi (PMA/111PT) NLNGBNY:ldap#g#e3d54c31f1115444b3404cf788b62268:site
+globaldir 26. Talabi, Olufemi (PTC/GT1) NLNGBNY:ldap#g#a9efc3d96cbff744b66b2db7d29375cc:site
+globaldir 27. Ude, Olughu (POP/41) NLNGBNY:ldap#g#14961861dd95b143a8cf08790cf36116:site
+globaldir olu done

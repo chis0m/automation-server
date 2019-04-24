@@ -12,6 +12,8 @@
     "body-parser": "^1.18.3",
     "buffer-xor": "^2.0.2",
     "express": "^4.16.4",
+    "socket.io": "^2.2.0",
+    "ssh-exec": "^2.0.0",
     "sync-mysql": "^3.0.1"
   }
 }

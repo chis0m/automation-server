@@ -1,31 +1,9 @@
-const express = require('express');
-var bodyParser = require('body-parser')
-const app = express()
-const verifyToken = require('./actions/verifyToken')
-app.use(bodyParser.json())
-
-app.use(function(req, res, next){
-    const bearerHeader = req.headers['authorization'] || "no bearer";
-    const bearer = bearerHeader.split(' ');
-    const tabToken = bearer[1];
-    const deviceToken = req.headers['device-token'].trim() || 'noToken';
-    if (!(tabToken && verifyToken.tab(tabToken)) || !(deviceToken && verifyToken.device(deviceToken))) {
-        res.sendStatus(403);
-    }else{
-        next();
-    }
-})
-
-//CORS
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, X-Auth-Token, Origin, Authorization, Device-token');
-    if (req.method === "OPTIONS") {
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-        res.status(200).json({})
-    }
-    next();
-});
+const app = require('./middleware').app;
+const cp = require('child_process');
+const processToken = require('./actions/processToken');
+const getDevices = require('./database/devicesInRoom').roomDevices;
+const Message = require('./connection/socketIo');
+const io = new Message(); 
 
 //Routers
 const volumeRouter = require('./routes/volume');
@@ -41,6 +19,8 @@ const monitorRouter = require('./routes/monitor');
 const wemoRouter = require('./routes/wemo');
 const modeRouter = require('./routes/mode');
 const lutronRouter = require('./routes/lutron');
+const roomRouter = require('./routes/room');
+const projectorRouter = require('./routes/projector');
 
 //Routes
 app.use('/api/volume', volumeRouter);
@@ -56,9 +36,32 @@ app.use('/api/monitor', monitorRouter);
 app.use('/api/wemo', wemoRouter);
 app.use('/api/lutron', lutronRouter);
 app.use('/api/mode', modeRouter);
+app.use('/api/room', roomRouter);
+app.use('/api/projector', projectorRouter);
 
 app.get('/api/room-details', function(req, res){
-    res.json({verifyToken})
+    token = processToken.getToken(req.headers['authorization'])
+    res.send(getDevices(token))
 });
 
-app.listen(3000, 'localhost');
+
+//Call notification child process
+let child = createNotificationService();
+child.on("exit", () => {
+	child = createNotificationService();
+});
+child.on("error", () => {
+	child = createNotificationService();
+});
+child.on("close", () => {
+	child = createNotificationService();
+});
+function createNotificationService() {
+	return cp.fork(__dirname + '/children/notification.js');
+}
+
+child.on('message', function(data){
+	io.send(Object.keys(data)[0], Object.values(data)[0])
+})
+
+app.listen(8000);

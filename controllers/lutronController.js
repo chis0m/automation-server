@@ -1,14 +1,11 @@
+
+const token = require('../actions/setTokens');
+const lutron = require('../connection/lutron')
+
 module.exports = {
-    LutronDetails : function(req, res){
-
-    },
-    LutronDimmer : function(req, res){
-
-    },
-    LutronButton : function(req, res){
-
-    },
-    LutronLed : function(req, res){
-
+    LutronScene : function(req, res){
+        let command = req.body.operation
+        lutron(command, res,token.tabToken, token.deviceToken);
+        // lutron(command, res);
     },
 }

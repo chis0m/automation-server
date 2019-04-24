@@ -14,7 +14,7 @@ router.get('/down', (req, res)=>{
 router.get('/range', (req, res)=>{
     volumeController.volumeRange(req, res);
 });
-router.post('/set', (req, res)=>{
+router.post('/set',(req, res)=>{
     volumeController.volumeSet(req, res);
 });
 

@@ -7,9 +7,15 @@ router.get('/sleep', function(req, res){
 });
 
 router.get('/wake', function(req, res){
-    modeController.ModeWake(req, res)
+    modeController.ModeWake(req, res);
+});
+
+router.get('/restart', function(req, res){
+    modeController.ModeRestart(req, res);
+});
+
+router.get('/shutdown', function(req, res){
+    modeController.ModeShutdown(req, res);
 })
-
-
 
 module.exports = router

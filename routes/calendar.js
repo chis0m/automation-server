@@ -10,4 +10,4 @@ router.post('/meeting-info', function(req, res){
     calendarController.calendarMeetingInfo(req, res);
 });
 
-module.exports = router
+module.exports = router;
