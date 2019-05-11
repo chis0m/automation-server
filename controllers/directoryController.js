@@ -15,7 +15,7 @@ module.exports = {
             timer.clearTimer();
             timer.startTimer(function(){
                 processDirectory(streamData,res);
-                conn.end()
+                conn.end();
             });
         })
     },

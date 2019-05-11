@@ -1,10 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 let BASEDIR  = path.dirname(__dirname);
+const dbConnection = require('../database/connection');
 let file = path.join(BASEDIR + '/files/directory.txt');
+var today = new Date();
+today = date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 let arr = [];
 // module.exports = function(streamData,string, res){
-module.exports = function(res){
+module.exports = function(res, query, boolean){ 
     streamData = fs.readFileSync(file);
     streamData = streamData.toString();
     streamData = streamData.split('\r\n');
@@ -41,11 +44,23 @@ module.exports = function(res){
                 arr.push(details);
             }else{
                 details['index'] =  null;
-                // arr.pop(details);
             }
-            // arr.push(details);
         });
-        console.log({directory_data : arr});
+        // console.log({directory_data : arr});
         res.send({directory_data : arr});
+        if (boolean) {
+            addDirectoryToDB(arr, dbConnection, query);
+        }
     }
+}
+function addDirectoryToDB(arr, dbHandler,query){
+    console.log('adding data to database');
+    arr.forEach(element => {
+        let id = dbHandler.query('SELECT name FROM directories WHERE id = '+'"'+element.id+'"'+'');
+        if(id.length == 0){ 
+            dbHandler.query('INSERT INTO directories(name,dir_type,query,created_at) VALUES('+'"'+element.id+'"'+','+'"'+element.type+'"'+','+'"'+query+'"'+','+'"'+today+'"'+')');
+        }else{
+            dbHandler.query('INSERT INTO directories(name,dir_type) VALUES("")');
+        }
+    });
 }

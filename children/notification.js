@@ -1,6 +1,7 @@
 const net = require('net')
 const client = new net.Socket();
 const  connection = require('../database/connection')
+const dirCache = require('../actions/dirCache');
 const command = "notify callstatus\r\n";
 
 let gs = connection.query("SELECT * FROM devices where type = 'group_series' ");
@@ -156,8 +157,16 @@ if (gs.length > 0) {
     }
 }
 
+setInterval(function() {
+    var date = new Date();
+    if (date.getHours() == 4 && date.getMinutes() == 0 && date.getSeconds() == 0) {
+      dirCache();
+    }
+  },3600000);
+
 process.on('uncaughtException', function(err){
-    console.log(err['code'])
+    console.log(err)
+    console.log(err['code'] + ' notification')
     if (err['code'] == "ECONNREFUSED") {
         connect();
     }

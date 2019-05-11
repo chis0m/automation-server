@@ -29,7 +29,7 @@ module.exports = function(scene,res,tabToken, deviceToken){
         client.connect(port,ip,function(){
             console.log('connected');
             client.write('nwk\r\n');
-            console.log("sent\n")
+            console.log("sent\n");
             switch (scene) {
                 case "0":
                     client.write('#device,'+serial+',83,3\r\n');

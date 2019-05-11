@@ -1,5 +1,6 @@
 const conference = require('../actions/conference');
-const presentation = require('../actions/presentation');
+// const presentation = require('../actions/old_presentation');
+const lutron = require('../connection/lutron');
 
 module.exports = {
     Conference :  function(req, res){
@@ -7,6 +8,7 @@ module.exports = {
     },
 
     Presentation : function(req, res){
-        presentation(res);
+        lutron("2",res);
+        // presentation(res);
     },
 }

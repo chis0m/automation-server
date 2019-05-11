@@ -11,6 +11,7 @@ const PASSWORD = element.password;
 const io = new Message()
 
 module.exports = function(command,res){
+
     console.log(command+" coming "+`on ${IP} and ${PORT}`)
     client.connect(PORT, IP, ()=>{
         client.write(PASSWORD+'\r\n'+command+'\r\n');
@@ -31,7 +32,9 @@ module.exports = function(command,res){
             io.send('error', `Check group series connection ${IP} ,timed out`);
         }
         client.end();
-        if(typeof res == Object) res.end();
+        if(res){
+            if(typeof res == Object) res.end();
+        }
     });
     return client;
 }

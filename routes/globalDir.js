@@ -6,8 +6,14 @@ router.get('/grouplist', (req, res)=>{
     globalDirController.globalDirGroupList(req, res);
 });
 
+router.post('/database', (req, res)=>{
+    globalDirController.globalDirSearchDatabase(req, res);
+});
 router.post('/search', (req, res)=>{
     globalDirController.globalDirSearch(req, res);
+});
+router.post('/save', (req, res)=>{
+    globalDirController.globalDirSave(req, res);
 });
 
 router.post('/search-size', (req, res)=>{

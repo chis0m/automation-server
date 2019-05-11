@@ -13,7 +13,7 @@ module.exports = function(command,res){
                     buf = Buffer.from('020000000002', 'hex');
                     // buf = Buffer.from('FE006565FF', 'hex');
                     // OnBuffer = Buffer.from('FE000000FF', 'hex');
-                    console.log('\n"'+command)
+                    console.log(command)
                     client.connect(element.port,element.ip,function(){
                         console.log('Connected to Projector');
                         client.write(buf);
@@ -21,7 +21,7 @@ module.exports = function(command,res){
                     });
                     client.on('data', (data)=>{
                         client.end();
-                        res.end()
+                        res.end();
                         // client.write(OnBuffer);
                         // client.on('data', ()=>{
                         //     client.end();
